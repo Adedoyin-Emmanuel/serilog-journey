@@ -8,7 +8,7 @@ using Serilog.Formatting.Compact;
 class Program{
 
     private static readonly string logPath = "./logs/log.json";
-    private static readonly ILogger _logger = new LoggerConfiguration().WriteTo.File(new CompactJsonFormatter(), logPath).CreateLogger();
+    private static readonly ILogger _logger = new LoggerConfiguration().WriteTo.File(new CompactJsonFormatter(), logPath, rollingInterval: RollingInterval.Day).CreateLogger();
 
     static public void Main(string[] args){
 
